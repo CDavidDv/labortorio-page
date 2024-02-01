@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Catalogo from '../components/Catalogo.astro';
+import Hero from '../components/Hero.astro';
+import Cards from '../components/CardsContainer.astro';
+import Sucursales from '../components/Sucursales.astro';
+import Nosotros from '../components/Nosotros.astro';
+---
+
+<Layout title="Bienvenido a MACE" varLinks="index">
+	<main class="flex flex-col gap-y-20 md:gap-y-20 overflow-hidden">
+		<Hero />
+		<Cards />
+		<Catalogo />
+		<Sucursales />
+		<Nosotros />
+	</main>
+</Layout>

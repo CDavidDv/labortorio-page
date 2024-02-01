@@ -1,0 +1,123 @@
+---
+
+const navLinks = [
+    {
+        "tittle": "INICIO",
+        "link": "#",
+    },
+    {
+        "tittle": "ANÁLISIS CLÍNICOS",
+        "link": "#",
+    },
+    {
+        "tittle": "SUCURSALES",
+        "link": "#",
+    },
+    {
+        "tittle": "MAQUILA",
+        "link": "#",
+    },
+    {
+        "tittle": "NOSOTROS",
+        "link": "#",
+    },
+    {
+        "tittle": "CONTACTO",
+        "link": "#",
+    }
+]
+
+---
+
+
+<nav class="bg-[#0d2047]">
+    <div id="mainMenu" class=" absolute h-screen w-full invisible bg-black bg-opacity-35 z-50 mt-20 flex flex-col items-center md:hidden">
+        <div id="menuExpand" class="bg-gray-100 w-10/12 mt-5 flex flex-col items-center pt-6">
+            {
+                navLinks.map((info) => (
+                    <a class="hover:bg-gray-400 font-semibold  shadow-sm rounded-sm text-center hover:bg-opacity-40 w-9/12 p-4" href={info.link}>{info.tittle}</a>
+                ))
+            }
+        </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative flex h-20 items-center justify-between">
+            <div class="relative ml-3">
+                <div>
+                    <a
+                        type="button"
+                        class="relative flex text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 "
+                        id="user-menu-button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        <img
+                            class="h-20"
+                            src="../../public/LOGO LABORATORIO BLANCO.png"
+                            alt=""
+                        />
+                    </a>
+                </div>
+            </div>
+            <div class="flex ">
+                <span id="botonExpandir" class="text-white md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+                </span>
+                <nav class="text-white font-semibold hidden md:block ">
+                    <div class="w-full ">
+                        {
+                            navLinks.map((info) => (
+                                <a class="hover:bg-black rounded-md hover:bg-opacity-40 p-[0.65rem]" href={info.link}>{info.tittle}</a>
+                            ))
+                        }
+                    </div>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+</nav>
+
+<style>
+    #menuExpand {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    #menuExpand.expanded {
+        height: 400px;
+    
+    }
+
+ 
+</style>
+
+<script is:inline>
+    var menu = document.getElementById('menuExpand');
+    var mainMenu = document.getElementById('mainMenu');
+    
+
+    document.getElementById('botonExpandir').addEventListener('click', function() {        
+        
+        if(menu.classList.contains('expanded')){
+            setTimeout(() => {
+                mainMenu.classList.toggle('invisible');
+                
+            }, 200);
+            menu.classList.toggle('expanded');    
+        }else{
+            mainMenu.classList.toggle('invisible');
+            menu.classList.toggle('expanded');    
+        }
+        
+        
+        
+        
+        
+    });
+
+   
+
+
+</script>

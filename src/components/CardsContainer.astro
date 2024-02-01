@@ -1,0 +1,50 @@
+---
+
+import Section from '../elements/Section.astro'
+
+const datos = [
+    {
+        "ruta": "./doc-aprovado.png",
+        "texto": "Calidad garantizada en nuestros resultados"
+    },
+    {
+        "ruta": "./precio.png",
+        "texto": "Precios competitivos y accesibles"
+    },
+    {
+        "ruta": "./cronometro.png",
+        "texto": "Resultados urgentes sin comprometer la calidad"
+    },
+    {
+        "ruta": "./Lab.png",
+        "texto": "Un amplio catálogo de estudios"
+    },
+    {
+        "ruta": "./tech.png",
+        "texto": "Tecnología y equipos de vanguardia"
+    },
+    {
+        "ruta": "./cliente.png",
+        "texto": "Atención personalizada y servicio al cliente excepcional"
+    },
+]
+---
+
+<Section title="¿Por qué elegirnos?">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-8 sm:mx-20" >
+        {   
+            datos.map((info) => (
+                <div class="flex border-solid border-[1px] border-slate-100 p-2 rounded-xl hover:scale-105 shadow-lg transition-all">
+            
+                    <img class="p-4" src={info.ruta} />
+                    <div class="flex flex-col justify-center h-full text-[#152e63] font-semibold">
+                        <p class=" overflow-hidden">
+                            {info.texto}
+                        </p>
+                    </div>
+                </div>
+                ))
+        }
+    </div>
+</Section>

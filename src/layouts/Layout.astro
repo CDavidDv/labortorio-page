@@ -1,0 +1,36 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+interface Props {
+  title: string;
+  varLinks?: string;
+}
+
+const { title } = Astro.props;
+const { varLinks } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="./image/svg+xml" href="./favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="LABORATORIO TLATLAUTIPEC">
+    
+    <title>LABORATORIO - {title}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-hidden overflow-y-auto bg-body">
+    <Navbar varNavbar={varLinks}/>
+    <slot />
+    <Footer varFooter={varLinks}/>
+  </body>
+  
+  
+</html>

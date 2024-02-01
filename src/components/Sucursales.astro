@@ -1,0 +1,72 @@
+---
+
+import Section from '../elements/Section.astro'
+
+const sucursales = [
+    {
+        "lugar": "Cuetzalan",
+        "detalles": "Centro Radiologico la Sierra"
+    },
+    {
+        "lugar": "Cuetzalan centro",
+        "detalles": "Frente a la mercería"
+    },
+    {
+        "lugar": "Huehuetla",
+        "detalles": "A un costado de la farmacia delta"
+    },
+    {
+        "lugar": "Tlatlauquitepec",
+        "detalles": "Frente a BBVA"
+    },
+    {
+        "lugar": "Zacapoaxtla",
+        "detalles": "Hospital San Pedro"
+    },
+    {
+        "lugar": "Zacapoaxtla centro",
+        "detalles": "Frente a la michoacana"
+    },
+    {
+        "lugar": "Zaragoza",
+        "detalles": "Av. Hidalgo #609, a media cuadra de pizzas angelotti"
+    },
+]
+---
+
+<Section title="Sucursales">
+    
+
+    
+        <div class="flex flex-col md:flex-row gap-4 mx-8 w-4/6 md:w-11/12">
+            <div class="flex justify-center">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7505.442948818755!2d-97. 50671560642095!3d19.851734599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85da944f562f8091%3A0xaa8e83ef47ac9300!2sLaboratorio%20de%20An%C3%A1lisis%20Cl%C3%ADnicos%20Tlatlauquitepec!5e0!3m2!1ses-419!2smx!4v1702347387626!5m2!1ses-419!2smx"
+                    
+                    width="400"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3  gap-2  items-center">
+                {
+                    sucursales.map((sucursal) => (
+
+                        <article class=" p-4 overflow-hidden shadow-sm border-[1px] border-solid border-slate-200 rounded-xl  ">
+                            <header class="flex gap-2 text-xl font-semibold text-[#0d2047] ">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg> {sucursal.lugar}
+                            </header>    
+                            <footer class="text-gray-700 overflow-hidden">
+                                {sucursal.detalles}
+                            </footer>
+                        </article>
+
+                    ))
+                }
+            </div>
+        </div>
+
+</Section>
+
