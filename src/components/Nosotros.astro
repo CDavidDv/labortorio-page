@@ -1,7 +1,54 @@
 ---
 import Section from '../elements/Section.astro'
+
+const yearsSection = [
+    {
+        number: "+45",
+        descript: "Años cuidandote"
+    },
+    {
+        number: "+150",
+        descript: "Estudios en nuestro catálogo"
+    },
+    {
+        number: "45",
+        descript: "Sucursales"
+    },
+    {
+        number: "45",
+        descript: "Presentes en municipios"
+    },
+]
 ---
 
-<Section title="Nosotros">
+<Section title="Nosotros" id="nosotros">
 
+    <div class="w-10/12 mx-auto bg-blue-100/50 grid lg:grid-cols-4 sm:grid-cols-2  text-center py-5 px-3 text-[#012169] 
+    
+    ">
+        
+            {
+                yearsSection.map((data) => {
+                    return (
+                        <div class="my-4">
+                            <h4 class="text-3xl font-bold text-center">{data.number}</h4>
+                            <p class="font-semibold">{data.descript}</p>
+                        </div>
+                    )
+                })
+            }
+    </div>
+    
+    <div class="flex sm:flex-row mt-10 gap-5 w-10/12 flex-col">
+        <article class="bg-blue-100/50 p-10">
+            <img class=" w-2/12 pb-3" src="./Mision.webp" alt="">
+            <p class="">
+                Proporcionar servicios de análisis clínicos con los más altos estándares de calidad, rapidez y confiabilidad. Nos comprometemos a contribuir a la salud y el bienestar de nuestros pacientes, médicos y la comunidad en general, ofreciendo resultados precisos y oportunos para respaldar decisiones médicas acertadas. Nuestra pasión por la excelencia en la atención al paciente y la innovación en tecnología nos impulsa a ser líderes en el campo de los laboratorios clínicos.
+            </p>
+        </article>
+        <article class="bg-blue-100/50 p-10">
+            <img class=" w-2/12 pb-3" src="./Vision.webp" alt="">
+            Ser reconocidos como el laboratorio de elección para la comunidad, los médicos y las instituciones de salud en Tlatlauquitepec y sus alrededores. Buscamos ser pioneros en la aplicación de tecnologías avanzadas y métodos de análisis de vanguardia para proporcionar diagnósticos precisos y personalizados. Aspiramos a ser un referente en rapidez y confiabilidad, trabajando en estrecha colaboración con profesionales de la salud para mejorar la calidad de vida de las personas a las que servimos.
+        </article>
+    </div>
 </Section>

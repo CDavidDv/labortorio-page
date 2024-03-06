@@ -1,42 +1,52 @@
 ---
-
+let { varLinks } = Astro.props
 const navLinks = [
     {
         "tittle": "INICIO",
-        "link": "#",
+        "link": "#inicio",
     },
     {
         "tittle": "ANÁLISIS CLÍNICOS",
-        "link": "#",
+        "link": "#catalogo",
     },
     {
         "tittle": "SUCURSALES",
-        "link": "#",
+        "link": "#sucursales",
+    },
+    {
+        "tittle": "EMPRESAS",
+        "link": "/Empresas",
     },
     {
         "tittle": "MAQUILA",
-        "link": "#",
+        "link": "/Maquila",
     },
     {
         "tittle": "NOSOTROS",
-        "link": "#",
+        "link": "#nosotros",
     },
     {
         "tittle": "CONTACTO",
-        "link": "#",
+        "link": "#contacto",
     }
 ]
 
+console.log(varLinks)
 ---
 
 
-<nav class="bg-[#0d2047]">
-    <div id="mainMenu" class=" absolute h-screen w-full invisible bg-black bg-opacity-35 z-50 mt-20 flex flex-col items-center md:hidden">
+<nav id="home" class="bg-[#0d2047] ">
+    <div id="mainMenu" class=" h-screen fixed w-full invisible bg-black bg-opacity-35 z-50 pt-20 flex flex-col items-center md:hidden">
         <div id="menuExpand" class="bg-gray-100 w-10/12 mt-5 flex flex-col items-center pt-6">
             {
-                navLinks.map((info) => (
-                    <a class="hover:bg-gray-400 font-semibold  shadow-sm rounded-sm text-center hover:bg-opacity-40 w-9/12 p-4" href={info.link}>{info.tittle}</a>
-                ))
+                navLinks.map((info) => {
+                   
+                    return (<a class="hover:bg-gray-400 font-semibold  shadow-sm rounded-sm text-center hover:bg-opacity-40 w-9/12 p-4"
+                
+                href={varLinks ?  info.link : `../${info.link}`} >{info.tittle}</a>)
+                
+                
+                })
             }
         </div>
     </div>
@@ -50,11 +60,12 @@ const navLinks = [
                         id="user-menu-button"
                         aria-expanded="false"
                         aria-haspopup="true"
+                        href={varLinks ? "#home" : "../#home"}
                     >
                         <img
                             class="h-20"
-                            src="../../public/LOGO LABORATORIO BLANCO.png"
-                            alt=""
+                            src="../../public/LOGO LABORATORIO BLANCO.webp"
+                            alt="imagen de fondo blanco de laboratorios"
                         />
                     </a>
                 </div>
@@ -67,7 +78,7 @@ const navLinks = [
                     <div class="w-full ">
                         {
                             navLinks.map((info) => (
-                                <a class="hover:bg-black rounded-md hover:bg-opacity-40 p-[0.65rem]" href={info.link}>{info.tittle}</a>
+                                <a class="hover:bg-black rounded-md hover:bg-opacity-40 p-[0.65rem]" href={varLinks ?  info.link : `../${info.link}`}>{info.tittle}</a>
                             ))
                         }
                     </div>
@@ -89,13 +100,13 @@ const navLinks = [
         height: 400px;
     
     }
-
  
 </style>
 
 <script is:inline>
     var menu = document.getElementById('menuExpand');
     var mainMenu = document.getElementById('mainMenu');
+    var allnav = document.getElementById('allnav');
     
 
     document.getElementById('botonExpandir').addEventListener('click', function() {        
@@ -103,18 +114,27 @@ const navLinks = [
         if(menu.classList.contains('expanded')){
             setTimeout(() => {
                 mainMenu.classList.toggle('invisible');
-                
-            }, 200);
+                allnav.classList.toggle('')  
+            }, 100);
             menu.classList.toggle('expanded');    
         }else{
             mainMenu.classList.toggle('invisible');
             menu.classList.toggle('expanded');    
         }
+    });
+
+    document.getElementById('mainMenu').addEventListener('click', function() {        
         
-        
-        
-        
-        
+        if(menu.classList.contains('expanded')){
+            setTimeout(() => {
+                mainMenu.classList.toggle('invisible');
+                allnav.classList.toggle('')  
+            }, 100);
+            menu.classList.toggle('expanded');    
+        }else{
+            mainMenu.classList.toggle('invisible');
+            menu.classList.toggle('expanded');    
+        }
     });
 
    

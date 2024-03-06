@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Contacto from '../components/Contacto.astro'
+---
+<Layout title="Empresas - Tlatlauquitepec">
+	<article class="flex justify-between">
+        <div class="w-7/12" style="">
+            <img class="h-full" src="./PrincipalEmpresas.webp" alt="">
+        </div>
+        <div class="w-6/12">
+            <Contacto >
+                <h3 class="text-center font-bold text-lg text-[#1e3a8a]" slot="title">Empresas</h3>
+                <div class="font-[400px] text-gray-600" slot="descip">
+                    <p>En Laboratorio clínico Tlatlauquitepec, entendemos las necesidades únicas de tu negocio. Nuestra dedicación a la excelencia y la innovación nos ha permitido desarrollar soluciones personalizadas para empresas de todos los tamaños.</p>
+                    <p>¡Contáctanos hoy para explorar nuevas oportunidades y llevar tu empresa al siguiente nivel!.</p>
+                </div>
+            </Contacto>
+        </div>
+    </article>
+</Layout>

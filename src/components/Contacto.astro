@@ -1,0 +1,14 @@
+<article class="w-8/12 p-5 mx-auto my-8 border rounded-lg shadow-xl">
+    <header class="mb-3">
+        <slot name="title"/>
+    </header>
+    <footer>
+        <slot class="" name="descip"/>
+        <div class="flex flex-col gap-3">
+            <p class="text-gray-800 text-sm font-bold   pt-5">Dirección de correo electrónico</p>
+            <input class="rounded border-2 hover:border-gray-400 px-2 py-1" type="email" autocomplete="off" name="email" id="email">
+            <button class="bg-[#1e3a8a] w-fit mx-auto py-2 px-5 rounded-md text-white">Enviar</button>
+            <small class="text-center text-gray-500">Recibirá una respuesta en su bandeja de correo electrónico a la brevedad</small>    
+        </div>
+    </footer>
+</article>

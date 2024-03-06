@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Contacto from '../components/Contacto.astro'
+---
+<Layout title="Empresas - Tlatlauquitepec">
+	<article class="flex justify-between">
+        <div class="w-6/12">
+            <Contacto >
+                <h3 class="text-center font-bold text-lg text-[#1e3a8a]" slot="title">Maquila</h3>
+                <div class="font-[400px] text-gray-600" slot="descip">
+                    <p>En Laboratorio clínico Tlatlauquitepec realizamos maquila de análisis de estudios de laboratorio clínico confiables, confidenciales y oportunos, mediante el uso de tecnología de vanguardia y controles de calidad internos que nos permiten proporcionar servicio de ayuda en el diagnóstico clínico de los pacientes, enfocados a cualquier entidad ya sea pública o privada del sector salud.</p>
+                </div>
+            </Contacto>
+        </div>
+        <div class="w-7/12" style="">
+            <img class="h-full" src="./PrincipalMaquilas.webp" alt="">
+        </div>
+    </article>
+</Layout>

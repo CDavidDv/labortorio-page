@@ -4,28 +4,40 @@ import Section from '../elements/Section.astro'
 
 const datos = [
     {
-        "ruta": "./doc-aprovado.png",
-        "texto": "Calidad garantizada en nuestros resultados"
+        "ruta": "./doc-aprovado.webp",
+        "titulo": "Calidad garantizada",
+        "texto": "Calidad garantizada en nuestros resultados",
+        "reverso": "Nuestro compromiso con la excelencia se refleja en cada análisis, respaldando la confianza en la precisión y la innovación en el cuidado de la salud."
     },
     {
-        "ruta": "./precio.png",
-        "texto": "Precios competitivos y accesibles"
+        "ruta": "./precio.webp",
+        "texto": "Precios competitivos y accesibles",
+        "titulo": "Precios competitivos",
+        "reverso": "Contamos con un catálogo exhaustivo que incluye todos nuestros servicios, con tarifas transparentes para que nuestros clientes puedan acceder a la más alta calidad a precios asequibles."
     },
     {
-        "ruta": "./cronometro.png",
-        "texto": "Resultados urgentes sin comprometer la calidad"
+        "ruta": "./cronometro.webp",
+        "texto": "Resultados urgentes sin comprometer la calidad",
+        "titulo": "Resultados urgentes",
+        "reverso": "Comprendemos la importancia del tiempo en el ámbito de la salud y nos comprometemos a proporcionar resultados precisos en el menor tiempo posible. Su satisfacción y confianza son nuestra prioridad."
     },
     {
-        "ruta": "./Lab.png",
-        "texto": "Un amplio catálogo de estudios"
+        "ruta": "./Lab.webp",
+        "texto": "Un amplio catálogo de estudios",
+        "titulo": "Catálogo PDF",
+        "reverso": "Estamos comprometidos a proporcionar un servicio integral que le brinde la tranquilidad que busca, respaldado por la amplitud y la precisión de nuestro catálogo de estudios."
     },
     {
-        "ruta": "./tech.png",
-        "texto": "Tecnología y equipos de vanguardia"
+        "ruta": "./tech.webp",
+        "texto": "Tecnología y equipos de vanguardia",
+        "titulo": "Vanguardia tecnológica",
+        "reverso": "Contamos con equipos modernos de última generación. Nuestra infraestructura está equipada con tecnología de punta que garantiza resultados precisos y confiables."
     },
     {
-        "ruta": "./cliente.png",
-        "texto": "Atención personalizada y servicio al cliente excepcional"
+        "ruta": "./cliente.webp",
+        "texto": "Atención personalizada y servicio al cliente excepcional",
+        "titulo": "Su satisfacción es prioridad",
+        "reverso": "Nos dedicamos a proporcionar una experiencia sin igual para nuestros clientes, garantizando atención personalizada, orientación detallada y un trato amable en cada interacción."
     },
 ]
 ---
@@ -35,13 +47,18 @@ const datos = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-8 sm:mx-20" >
         {   
             datos.map((info) => (
-                <div class="flex border-solid border-[1px] border-slate-100 p-2 rounded-xl hover:scale-105 shadow-lg transition-all">
+                <div class="flex group border-solid border-[1px] duration-1000 transition-all border-slate-100 p-2 rounded-xl hover:scale-105 shadow-lg transition-all">
             
-                    <img class="p-4" src={info.ruta} />
-                    <div class="flex flex-col justify-center h-full text-[#152e63] font-semibold">
-                        <p class=" overflow-hidden">
+                    <img class="group-hover:hidden block p-4 " src={info.ruta} />
+                    <div class="group-hover:hidden block flex flex-col justify-center h-full text-[#152e63] font-semibold ">
+                        <p class=" overflow-hidden duration-500">
                             {info.texto}
                         </p>
+                        
+                    </div>
+                    <div class="group-hover:block hidden p-5 duration-500">
+                        <h1 class="text-xl font-bold text-[#0d2047]">{info.titulo}</h1>
+                        <small class="text-sm text-gray-500">{info.reverso}</small>
                     </div>
                 </div>
                 ))

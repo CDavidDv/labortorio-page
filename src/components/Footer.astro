@@ -1,20 +1,62 @@
-<footer>
-    <div class="bg-gray-100">
-        <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col justify-between">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <img
-                src="../../public/LOGO LABORATORIO.png"
-                width="210"
-                height="50"
-                class="p-0"
-                alt="LOGO LABORATORIO Logo"
-            />
-          </a>
-          <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2024 LABORATORIO CLÍNICO TLATLAUTIPEC —
-            <a href="https://mace-technology.com" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@MACETECHNOLOGY</a>
-          </p>
-          
+---
+import  Facebook  from '../icons/Facebook.astro'
+import  Mail  from '../icons/GmailIcon.astro'
+import  Tel  from '../icons/Phone.astro'
+import  WhatsApp  from '../icons/WhatsApp.astro'
 
+const { varLinks } = Astro.props;
+---
+
+<footer id="contacto">
+    <div class="bg-[#020617]">
+        <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col justify-between text-white">
+          <div>
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            href={varLinks ? "#home" : "../#home"}>
+              <img
+                  src="../../public/LOGO LABORATORIO BLANCO.webp"
+                  width="210"
+                  height="50"
+                  class="p-0"
+                  alt="LOGO LABORATORIO Logo"
+              />
+            </a>
+            <div class="flex flex-col">
+              <div class="flex gap-4 p-2">
+                <Facebook />
+                <WhatsApp />
+                <Mail />
+                <Tel />
+              </div>
+              
+                <a class="pl-2  " href="tel:+522333144348">+52 233-314-4348</a>
+                <a href="mailto:clinicostlatlauquitepec@outlook.es" class="hover:underline transition text-gray-500 hover:text-gray-400">clinicostlatlauquitepec@outlook.es</a>
+              
+            </div>
+
+          </div>
+          
+          <div class="grid sm:gap-14 grid-cols-2 sm:grid-cols-3 gap-5 grid-flow-row sm:grid-flow-col mt-5">
+            <div class="flex flex-col">
+              <h3 class="font-bold uppercase">Inicio</h3> 
+              <a class="text-gray-400" href={ varLinks ? "#catalogo" : "../#catalogo"}>Análsis clínicos</a>
+              <a class="text-gray-400" href={ varLinks ? "#sucursales" : "../#sucursales"}>Sucursales</a>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-bold uppercase">Empresa</h3> 
+              <a class="text-gray-400" href="/Maquila">Maquila</a>
+              <a class="text-gray-400" href="/Empresas">Empresas</a>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-bold uppercase">About Us</h3> 
+              <a class="text-gray-400" href={ varLinks ? "#nosotros" : "../#nosotros"}>Acerca de nosotros</a>
+              <a class="text-gray-400" href="/FAQs">FAQs</a>
+            </div>
+          </div>
         </div>
+        <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4 text-center"> All Rights Reserved. —
+          <a href="https://mace-technology.com" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">© 2024 MACE TECHNOLOGY™.</a>
+        </p>
       </div>
+      
 </footer>

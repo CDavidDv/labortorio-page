@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import WhatsAppButton from "../components/Speed-dial.astro";
 
 interface Props {
   title: string;
@@ -20,7 +21,7 @@ const { varLinks } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="LABORATORIO TLATLAUTIPEC">
     
-    <title>LABORATORIO - {title}</title>
+    <title>{title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -30,6 +31,7 @@ const { varLinks } = Astro.props;
     <Navbar varNavbar={varLinks}/>
     <slot />
     <Footer varFooter={varLinks}/>
+    <WhatsAppButton />
   </body>
   
   
